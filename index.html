@@ -63,44 +63,40 @@
   }
 
   /* ===== MESSAGE GROUP POSITION ===== */
-  #messageGroup {
-    position: absolute;
+#messageGroup {
+  position: absolute;
+  top: 79%;
+  left: 50%;
+  width: 82%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  z-index: 1;
+  visibility: hidden;
 
-    top: 73%;
-    left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
 
-    /* Constrained width forces clean, balanced line wraps */
-    width: 65%;
+  text-align: center;
+}
 
-    transform: translate(-50%, -50%);
-    transform-origin: center center;
-
-    z-index: 1;
-    visibility: hidden;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-
-    text-align: center;
-  }
-
-  /* ===== MAIN MESSAGE ===== */
+    
+ /* ===== MAIN MESSAGE ===== */
 #mainMessage {
   position: relative;
   width: 100%;
-  max-width: 13ch;
+  max-width: none;
   margin: 0 auto;
 
   font-family: 'Ez Fwipple', serif;
   font-size: 23px;
-  line-height: 1.15;
-
+  line-height: 1.1;
   color: #ea2e68;
 
   overflow-wrap: break-word;
+  white-space: pre-line;
 }
     
   /* ===== SECONDARY MESSAGE ===== */
