@@ -187,40 +187,24 @@
 
       <form id="revealForm">
         
-<label for="mainMessage">Main Message</label>
+<label for="mainMessage">Your Personalised Message</label>
 
 <textarea
   id="mainMessage"
   name="mainMessage"
-  placeholder="Surprise! It's a trip to DisneyWorld!"
+  placeholder="Baby Grinch Due December!"
   required
 ></textarea>
 
 <div class="hint">
-  Enter the destination
+  Enter your personalised message, e.g. Baby Grinch Due December!
 </div>
 
 <div class="hint">
-  Recommended word length = 5-6 words
+  Recommended length: 4–6 words for the best fit.
 </div>
 		  
-		  <label for="secondaryMessage">Secondary Message</label>
-
-<textarea
-  id="secondaryMessage"
-  name="secondaryMessage"
-  placeholder="We leave 23rd December"
-  required
-></textarea>
-
-<div class="hint">
-  Enter the second message you'd like to appear in the reveal.
-</div>
-
-		  <div class="hint">
-  Recommended word length = 4-5 words max 
-</div>
-
+		 
 
 
         <button type="submit" id="submitButton">
@@ -350,25 +334,18 @@
 
     document.getElementById("mainMessage").value =
   data.main_message || "";
-
-document.getElementById("secondaryMessage").value =
-  data.secondary_message || "";
 		
     }
 
     form.addEventListener("submit", async function(event) {
       event.preventDefault();
 
-      const mainMessage =
+     const mainMessage =
   document.getElementById("mainMessage").value.trim();
-
-const secondaryMessage =
-  document.getElementById("secondaryMessage").value.trim();
 		
       if (editToken && editingRevealId) {
     const updateData = {
   main_message: mainMessage,
-  secondary_message: secondaryMessage
 };
 
         
@@ -432,7 +409,7 @@ const secondaryMessage =
   {
     id: id,
     main_message: mainMessage,
-    secondary_message: secondaryMessage,
+    secondary_message: "",
     edit_token: newEditToken,
     locked_after: lockedAfter.toISOString()
   }
