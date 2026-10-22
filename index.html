@@ -62,22 +62,16 @@
     z-index: 0;
   }
 
-  /* ===== MESSAGE GROUP POSITION ===== */
+/* ===== MESSAGE GROUP POSITION ===== */
 #messageGroup {
   position: absolute;
   top: 78%;
   left: 50%;
-  width: 82%;
+  width: 96%;
   transform: translate(-50%, -50%);
   transform-origin: center center;
   z-index: 1;
   visibility: hidden;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
 
   text-align: center;
 }
@@ -99,19 +93,7 @@
   white-space: pre-line;
 }
     
-  /* ===== SECONDARY MESSAGE ===== */
-  #secondaryMessage {
-    width: 90%;
-    margin: 0;
 
-    font-family: 'Aesthet', serif;
-    font-size: 19px;
-    line-height: 1.15;
-
-    color: #198754; /* Festive Green */
-
-    overflow-wrap: break-word;
-  }
 
    .sc__container canvas {
     position: absolute;
@@ -135,7 +117,6 @@
 
      <div id="messageGroup">
        <div id="mainMessage"></div>
-       <div id="secondaryMessage"></div>
      </div>
 
      <canvas id="scratchCanvas"></canvas>
@@ -178,7 +159,7 @@
       }
 
       document.getElementById("mainMessage").textContent = data.main_message || "";
-      document.getElementById("secondaryMessage").textContent = data.secondary_message || "";
+    
     }
 
     document.addEventListener("DOMContentLoaded", () => {
