@@ -103,6 +103,14 @@
     height: 100%;
     z-index: 2;
   }
+    /* ===== MOBILE MESSAGE POSITION ===== */
+@media (max-width: 768px) {
+  #messageGroup {
+    top: 76.5%;
+    width: 84%;
+  }
+}
+    
   </style>
 
   <!-- Confetti library -->
@@ -315,10 +323,13 @@
         ) {
           scratchMovesInBox++;
 
-          if (scratchMovesInBox >= MOVES_THRESHOLD) {
-            hasFiredConfetti = true;
-            launchConfetti();
-          }
+         if (scratchMovesInBox >= MOVES_THRESHOLD) {
+  hasFiredConfetti = true;
+
+  setTimeout(() => {
+    launchConfetti();
+  }, 2000);
+}
         }
       }
 
